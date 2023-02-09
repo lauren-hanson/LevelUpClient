@@ -26,6 +26,7 @@ export const EventList = (props) => {
                         <div className="event__players">Date: {event.date}</div>
                         <div className="event__skillLevel">Time: {event.time}</div>
                     </section>
+                    
                 })
             }
         </article>
