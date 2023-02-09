@@ -1,0 +1,9 @@
+.homePage { 
+    border: 1px solid #8f391e; 
+    background-color: #8f391e;
+    color: #fef2e6;
+    margin: 40px; 
+    opacity: 90%;
+    padding: 20px; 
+    text-align: center; 
+}

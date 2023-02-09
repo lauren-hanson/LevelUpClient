@@ -1,0 +1,20 @@
+.eventForm, .events { 
+    padding: 50px; 
+}
+
+.event, .eventForm {
+    border: 1px solid #694f43; 
+    background-color: #8f391e;
+    color: #fef2e6;
+    margin: 40px; 
+    opacity: 95%;
+    padding: 20px 50px;
+  
+}
+
+/* .btn { 
+    background-color: #8f391e; 
+    border: 1px solid #8f391e; 
+    padding: 20px; 
+    margin-top: 50px;
+} */

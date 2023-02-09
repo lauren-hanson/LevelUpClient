@@ -2,6 +2,14 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
+    background-color: #8f391e ; 
+    margin: 0; 
+    padding: 20px; 
+    opacity: 95%;
+}
+
+.navbar__link, .nav-link { 
+    color: #fef2e6;
 }
 
 .navbar__item {
