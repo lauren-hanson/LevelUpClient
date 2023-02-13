@@ -8,7 +8,7 @@ export const GameForm = () => {
     const navigate = useNavigate()
     
     const [gameTypes, setGameTypes] = useState([])
-    const [newGameTypes, setNewGameTypes] = useState([])
+    // const [newGameTypes, setNewGameTypes] = useState([])
     const [newGame, setNewGame] = useState({
         title: "", 
         maker: "", 
@@ -102,8 +102,7 @@ export const GameForm = () => {
                     }
 
                     // Send POST request to your API
-                    createGame(game)
-                        .then(() => navigate("/games"))
+                    createGame(game).then(() => navigate("/games"))
                 }}
                 className="btn gameButton">Create Game</button>
         </form>
