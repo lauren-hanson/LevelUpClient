@@ -1,24 +1,31 @@
-@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap');
 /*Typography
 --------------------------------------------------------------*/
 
 body, button, input, select, textarea {
     color: #404040;
-    font-family: "Comfortaa", Arial, sans-serif;
+    font-family: 'Roboto Mono', monospace;
     font-size: 1rem;
+	font-weight: bolder; 
     line-height: 1.5;
     padding: 0;
     margin: 0;
+	
+}
+
+body { 
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTItnSMRBk7ZhRW8LHRpAib_Xg64Z884egyxA&usqp=CAU'); 
+	/* background-repeat: repeat-y;  */
+
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Patua One", serif;
+    font-family: 'Roboto Mono', monospace;
     letter-spacing: 2px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: 'Roboto Mono', monospace;
 }
 
 .fakeLink {
@@ -40,13 +47,12 @@ code {
 
 /* General button style */
 .btn {
-	border: none;
-	font-family: Menlo;
+	border: 1px solid 694f43;
 	font-size: inherit;
 	color: inherit;
 	background: none;
 	cursor: pointer;
-	padding: 25px 80px;
+	padding: 25px 60px;
 	display: inline-block;
 	margin: 15px 30px;
 	text-transform: uppercase;
@@ -82,7 +88,7 @@ code {
 
 /* Icon separator */
 .btn-sep {
-	padding: 25px 60px 25px 120px;
+	padding: 25px 60px;
 }
 
 .btn-sep:before {
@@ -116,16 +122,16 @@ code {
 
 /* Button 2 */
 .btn-2 {
-	background: #2ecc71;
+	background-color: #8f391e;
 	color: #fff;
 }
 
 .btn-2:hover {
-	background: #27ae60;
+	background-color: #8f391e;
 }
 
 .btn-2:active {
-	background: #27ae60;
+	background-color: #8f391e;
 	top: 2px;
 }
 

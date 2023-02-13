@@ -1,0 +1,31 @@
+.gameForm, .games { 
+    padding: 50px; 
+    
+}
+
+.gameForm, .game { 
+    border: 1px solid #694f43; 
+    background-color: #8f391e;
+    color: #fef2e6;
+    margin: 40px; 
+    opacity: 95%;
+    padding: 20px; 
+}
+
+/* .game { 
+    display: inline-block;
+    flex-direction: row;
+    padding: 20px; 
+    margin: 20px; 
+    border: 1px solid #694f43; 
+} */
+
+/* .btn, .gameButton { 
+    background-color: #694f43; 
+    border: 1px solid black; 
+    padding: 20px; 
+    margin-top: 50px; 
+} */
+
+
+
