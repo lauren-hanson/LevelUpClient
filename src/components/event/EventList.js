@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom'
-import { getEvents } from "../../managers/EventManager.js"
+import { getEvents, deleteEvent } from "../../managers/EventManager.js"
 // import { getGames } from "../../managers/GameManager.js"
 import "./Event.css"
 
 export const EventList = (props) => {
     const [ events, setEvents ] = useState([])
+    const [refresh, setRefresh ] = useState(true)
     // const [ games, setGames ] = useState([])
     const navigate = useNavigate()
 
     useEffect(() => {
         getEvents().then(data => setEvents(data))
         // getGames().then(data => setGames(data))
-    }, [])
+    }, [, refresh])
+
+    const handleDeleteButton = (id) => { 
+        deleteEvent(id) 
+        .then(setRefresh(!refresh))
+    }
 
     return (
         <>
@@ -29,11 +35,18 @@ export const EventList = (props) => {
                         <div className="event__players">Date: {event.date}</div>
                         <div className="event__skillLevel">Time: {event.time}</div>
                         <div className="event__gamel">Game: {event?.game?.title}</div>
-                        
-                        <button onClick={() => {
-                            navigate({ pathname: `/events/${event.id}` })
-                        }}
-                        >Edit</button>
+                         <div className="buttonContainer">
+                            <button className="editButton" onClick={() => {
+                                navigate({ pathname: `/events/${event.id}` })
+                            }}
+                            >Edit</button>
+                            <button className="deleteButton" onClick={() => {
+                                        { handleDeleteButton(event.id) }
+                                        navigate({ pathname: `/events` })
+                                        
+                                    }}
+                                    >Delete</button>
+                        </div>
                     </section>
                     
                 })

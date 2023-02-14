@@ -1,22 +1,28 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
-import { getGames } from "../../managers/GameManager.js"
+import { getGames, deleteGame } from "../../managers/GameManager.js"
 import "./Game.css"
 
 export const GameList = (props) => {
     let { gameId } = useParams()
     const [games, setGames] = useState([])
+    const [refresh, setRefresh ] = useState(true)
     const navigate = useNavigate()
 
     useEffect(() => {
         getGames().then(data => setGames(data))
-    }, [])
+    }, [, refresh])
+
+    const handleDeleteButton = (id) => {
+        deleteGame(id)
+        .then(setRefresh(!refresh))
+    }
 
     return (
         <>
             <button className="btn btn-2 btn-sep icon-create" id="newGameButton"
                 onClick={() => {
-                    navigate({ pathname: "/games/new" })
+                    navigate({   pathname: "/games/new" })
                 }}
             >Register New Game</button>
             <article className="games">
@@ -27,14 +33,22 @@ export const GameList = (props) => {
                             <div className="game__players">{game.num_of_players} players needed</div>
                             <div className="game__skillLevel">Skill level is {game.skill_level}</div>
                             <div className="game__game_type">Game Type: {game.game_type.label}</div>
-                            <button onClick={() => {
-                                navigate({ pathname: `/games/${game.id}` })
-                            }}
-                            >Edit</button>
-                    </section>
-                })
-            }
-        </article>
+                            <div className="buttonContainer">
+                                <button className="editButton" onClick={() => {
+                                    navigate({ pathname: `/games/${game.id}` })
+                                }}
+                                >Edit</button>
+                                <button className="deleteButton" onClick={() => {
+                                    { handleDeleteButton(game.id) }
+                                    navigate({ pathname: `/games` })
+                                    
+                                }}
+                                >Delete</button>
+                            </div>
+                        </section>
+                    })
+                }
+            </article>
         </>
     )
 }
