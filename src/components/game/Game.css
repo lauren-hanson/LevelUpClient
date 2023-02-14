@@ -12,6 +12,13 @@
     padding: 20px; 
 }
 
+.deleteButton, .editButton { 
+    padding: 10px; 
+    margin: 5px; 
+}
+
+
+
 /* .game { 
     display: inline-block;
     flex-direction: row;
