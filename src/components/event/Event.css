@@ -12,6 +12,11 @@
   
 }
 
+.leaveButton, .joinButton { 
+    padding: 10px; 
+    margin: 5px; 
+}
+
 /* .btn { 
     background-color: #8f391e; 
     border: 1px solid #8f391e; 
