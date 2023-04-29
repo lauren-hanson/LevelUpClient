@@ -6,7 +6,7 @@ import "./Game.css"
 export const GameList = (props) => {
     let { gameId } = useParams()
     const [games, setGames] = useState([])
-    const [refresh, setRefresh ] = useState(true)
+    const [refresh, setRefresh] = useState(true)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -15,14 +15,17 @@ export const GameList = (props) => {
 
     const handleDeleteButton = (id) => {
         deleteGame(id)
-        .then(setRefresh(!refresh))
+            .then(setRefresh(!refresh))
+        // .then(() => { 
+        //     getGames().then(data => setGames(data))
     }
+
 
     return (
         <>
             <button className="btn btn-2 btn-sep icon-create" id="newGameButton"
                 onClick={() => {
-                    navigate({   pathname: "/games/new" })
+                    navigate({ pathname: "/games/new" })
                 }}
             >Register New Game</button>
             <article className="games">
@@ -41,7 +44,7 @@ export const GameList = (props) => {
                                 <button className="deleteButton" onClick={() => {
                                     { handleDeleteButton(game.id) }
                                     navigate({ pathname: `/games` })
-                                    
+
                                 }}
                                 >Delete</button>
                             </div>

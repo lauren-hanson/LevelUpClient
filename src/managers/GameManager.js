@@ -54,7 +54,7 @@ export const deleteGame = (gameId) => {
             "Authorization": `Token ${localStorage.getItem("lu_token")}`,
         }
     })
-};
+}
 
 
 
